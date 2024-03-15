@@ -1,0 +1,1711 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    tr {
+        font-weight: bolder;
+    }
+
+        tr td:first-child {
+            width: 100px;
+        }
+
+        tr td:nth-child(2) {
+            width: 25px;
+        }
+
+    .maincard {
+        height: 400px;
+        width: 350px;
+    }
+</style>
+<main>
+    @*accordian*@
+    <div class="accordion" id="accordion">
+        <div class="accordion-item" data-bs-parent="accordion">
+            <div class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-o-carousel"><h1>Carousel</h1></button>
+            </div>
+            <div class="accordion-collapse collapse show" id="accordion-o-carousel" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    @*carousel*@
+                    <div class="accordion" id="accordion-carousel">
+                        <div class="accordion-item" data-bs-parent="accordion-carousel">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-carousel-intro"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-carousel-intro" data-bs-parent="#accordion-carousel">
+                                <div class="accordion-body">
+                                    <div class="carousel slide bg-black mb-3" id="carousel" data-bs-ride="carousel" data-bs-interval="3000">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div style="height:100vh;width:100vw">
+                                                    <img src="~/Content/Images/alex-shuper-Or-ysyrPXnU-unsplash.jpg" class="h-100 w-100" style="object-fit:contain" />
+                                                </div>
+                                                <div class="carousel-caption">
+                                                    <h1> Carousel</h1>
+                                                    <p> Carousel is nothing but a slide show. </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item ">
+                                                <div style="height:100vh;width:100vw">
+                                                    <img src="~/Content/Images/jaromir-kavan-JL4LDwMd5rA-unsplash.jpg" class="h-100 w-100" style="object-fit:contain" />
+                                                </div>
+                                                <div class="carousel-caption">
+                                                    <h1> Carousel features</h1>
+                                                    <p> In carousel we have dark colors. And we can control slide timing and fading-animation. </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item  ">
+                                                <div style="height:100vh;width:100vw">
+                                                    <img src="~/Content/Images/ft-shafi-yXj3_8hhKQM-unsplash.jpg" class="h-100 w-100" style="object-fit:contain" />
+                                                </div>
+                                                <div class="carousel-caption">
+                                                    <h1> Carousel components</h1>
+                                                    <p> Indicators, content, previous and next buttons </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button type="button" class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-next"> Next </button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-prev"> Previous </button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-pause"> Pause </button>
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <input class="form-control" id="carousel-to-input" type="number" />
+                                                <button class="btn btn-danger" id="carousel-to">Go</button>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-dispose">Dispose</button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-eslid">Event slid.bs.carousel</button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-danger" id="carousel-eslide">Event slide.bs.carousel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-carousel-javascript"><h2>Via Javascript</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-carousel-javascript" data-bs-parent="#accordion-carousel">
+                                <div class="accordion-body">
+                                    <p>We can control carousel via javascript.</p>
+                                    <p>
+                                        <b>
+                                            var myCarousel = document.querySelector('#myCarousel')<br />
+                                            var carousel = new bootstrap.Carousel(myCarousel, Options)
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-carousel-option"><h2>Options</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-carousel-option" data-bs-parent="#accordion-carousel">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Interval </td>
+                                                <td>-</td>
+                                                <td>Number (Interval between two slides)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Keyboard </td>
+                                                <td>-</td>
+                                                <td>Boolean</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pause </td>
+                                                <td>-</td>
+                                                <td>String, Boolean (hover(default), mouseleave, mouseenter, true, false)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ride </td>
+                                                <td>-</td>
+                                                <td>String, Boolean (Autoplays the carousel after the user manually cycles the first item. If set to 'carousel', autoplays the carousel on load.)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wrap </td>
+                                                <td>-</td>
+                                                <td>Boolean (	Whether the carousel should cycle continuously or have hard stops.)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Touch </td>
+                                                <td>-</td>
+                                                <td>Boolean (Whether the carousel should support left/right swipe interactions on touchscreen devices.)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-carousel-methods"><h2>Javascript Methods</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-carousel-methods" data-bs-parent="#accordion-carousel">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>cycle</td>
+                                                <td>-</td>
+                                                <td>Cycles through carousel items form left to right</td>
+                                            </tr>
+                                            <tr>
+                                                <td>pause</td>
+                                                <td>-</td>
+                                                <td>Stops the carousel from cycling through</td>
+                                            </tr>
+                                            <tr>
+                                                <td>prev</td>
+                                                <td>-</td>
+                                                <td>Cycles to the previous item</td>
+                                            </tr>
+                                            <tr>
+                                                <td>next</td>
+                                                <td>-</td>
+                                                <td>Cycles to the next item</td>
+                                            </tr>
+                                            <tr>
+                                                <td>nextWhenVisible</td>
+                                                <td>-</td>
+                                                <td>Dont cycle through the carousel when the page or its parent is not visible.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>to</td>
+                                                <td>-</td>
+                                                <td>Cycles to the specified carousel item.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dispose</td>
+                                                <td>-</td>
+                                                <td>Destroys an element's carousel. (Removes stored data on the DOM element)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getInstance</td>
+                                                <td>-</td>
+                                                <td>Gets the instance of the carousel.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getOrCreateInstance</td>
+                                                <td>-</td>
+                                                <td>Gets the instance of the carousel, if not present then creates a carousel instance.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-target="#accordion-carousel-events" data-bs-toggle="collapse"><h2>Events</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-carousel-events" data-bs-parent="#accordion-carousel">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>slide.bs.carousel</td>
+                                                <td>-</td>
+                                                <td>Fires immediately when the slide instance method is invoked.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>slid.bs.carousel</td>
+                                                <td>-</td>
+                                                <td>Fired when the carousel has completed its slide transition.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*end*@
+                </div>
+            </div>
+
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-accodion"><h1>Accordion</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-accodion" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-accordion-intro"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-accordion-intro" data-bs-parent="#accordion-accordion">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="accordion-ex">
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-item1">Open First item</button>
+                                            </div>
+                                            <div class="accordion-collapse collapse show" id="accordion-item1" data-bs-parent="#accordion-ex">
+                                                <div class="accordion-body">
+                                                    <p class="text-warning">opened item one.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item2">Open Second item</button>
+                                            </div>
+                                            <div class="accordion-collapse collapse" id="accordion-item2" data-bs-parent="#accordion-ex">
+                                                <div class="accordion-body">
+                                                    <p class="text-danger">opened item second.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item3">Open third item</button>
+                                            </div>
+                                            <div class="accordion-collapse collapse" id="accordion-item3" data-bs-parent="#accordion-ex">
+                                                <div class="accordion-body">
+                                                    <p class="text-success">opened item three.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item4">Open fourth item</button>
+                                            </div>
+                                            <div class="accordion-collapse collapse" id="accordion-item4" data-bs-parent="#accordion-ex">
+                                                <div class="accordion-body">
+                                                    <p class="text-primary">opened item fourth.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-target="#accordion-accordion-flush" data-bs-toggle="collapse"><h2>Flush</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-accordion-flush" data-bs-parent="#accordion-accordion">
+                                <div class="accordion-body">
+                                    <p><b>Remove default background color some borders and rounded corners. Apply class <span class="text-danger">.accordion-flush</span> to the main parent element.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-target="#accordion-accordion-opened" data-bs-toggle="collapse"><h2>Opened</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-accordion-opened" data-bs-parent="#accordion-accordion">
+                                <div class="accordion-body">
+                                    <p><b>If you want to keep accordian always open just remove the <span class="text-danger">-data-bs-parent</span> html attribute. As the item is not provided its parent name, it does </b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-alerts"><h1>Alerts</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-alerts" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-alerts">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-alerts-intro"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapsed show" id="accordion-alerts-intro" data-bs-parent="#accordion-alerts">
+                                <div class="accordion-body">
+                                    <div class="alert alert-primary alert-dismissible d-flex">
+                                        <div><i class="fa fa-warning pt-2" style="font-size:10rem"></i></div>
+                                        <div class="alert-heading"><h4>Hey, this is a alert.</h4></div>
+                                        <div class="btn-close" data-bs-dismiss="alert"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-alerts-methods"><h2>Javascrip Methods</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-alerts-methods" data-bs-parent="#accordion-alerts">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>close</td>
+                                                <td>-</td>
+                                                <td>Closes the alert element by removing it from the DOM.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dispose</td>
+                                                <td>-</td>
+                                                <td>Destroys an elements alert.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getInstance</td>
+                                                <td>-</td>
+                                                <td>Static method which return instance of the alert element.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getOrCreateInstance</td>
+                                                <td>-</td>
+                                                <td>Static method which return instance of the alert element. If the instance is not initialised then this method creats an instance.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-alerts-events"><h2>Events</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-alerts-events" data-bs-parent="#accordion-alerts">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>close.bs.alert</td>
+                                                <td>-</td>
+                                                <td>Fires immediately when the close instance method is called.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>closed.bs.alert</td>
+                                                <td>-</td>
+                                                <td>Fired when the alert has been closed and CSS transitions have completed.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-badge"><h1>Badge</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-badge" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-badge">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-badge-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-badge-example" data-bs-parent="#accordion-badge">
+                                <div class="accordion-body">
+                                    @*badge*@
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <div class="btn btn-primary position-relative text-center">
+                                                <span id="badge" class="badge bg-primary position-absolute top-0 start-100 translate-middle rounded-pill">9+</span>
+                                                Notifications
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-danger" id="badge-change-color">Change color</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-breadcrumbs"><h1>Breadcrumb</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-breadcrumbs" data-bs-parent="#accordion">
+                <div class="accordion" id="accordion-breadcrumbs">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-breadcrumbs-example"><h2>Example</h2></button>
+                        </div>
+                        <div class="accordion-collapse collapse show" id="accordion-breadcrumbs-example" data-bs-parent="#accordion-breadcrumbs">
+                            <div class="accordion-body">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">Home</li>
+                                        <li class="breadcrumb-item">About</li>
+                                        <li class="breadcrumb-item active">Contact</li>
+                                    </ol>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-breadcrumbs-intro"><h2>Introduction</h2></button>
+                        </div>
+                        <div class="accordion-collapse collapse" id="accordion-breadcrumbs-intro" data-bs-parent="#accordion-breadcrumbs">
+                            <div class="accordion-body">
+                                <p>-     Indicates the current pages location within a navigational hierarchy that automatically adds seperators via CSS.</p>
+                                <p>-     Adds automatic devider.</p>
+                                <p>-     If we want to change the divider then we have to specify the divider in nav element.</p><br />
+                                <p>-     <b>style="--bs-breadcrumb-divider: <span class="text-danger">'>'</span>;" aria-label="breadcrumb"</b></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-button"><h1>Buttons</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-button" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-button">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-button-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-button-example" data-bs-parent="#accordion-button">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <button id="button" class="btn btn-primary">This is button</button>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button id="button-size" class="btn btn-danger">Change size</button>
+                                                </div>
+                                                <div class="col">
+                                                    <button id="button-color" class="btn btn-danger">Change color</button>
+                                                </div>
+                                                <div class="col">
+                                                    <button id="button-outline" class="btn btn-danger">Change to outline</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-button-colors"><h2>Colors and Sizes</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-button-colors" data-bs-parent="#accordion-button">
+                                <div class="accordion-body">
+                                    <p>
+                                        <b>
+                                            There are 8 button color types.
+                                            <span class="text-primary">.btn-primary</span>
+                                            <span class="text-dark">.btn-dark</span>
+                                            <span class="text-secondary">.btn-secondary</span>
+                                            <span class="text-danger">.btn-danger</span>
+                                            <span class="text-light">.btn-light</span>
+
+                                            <span class="text-success">.btn-success</span>
+                                            <span class="text-warning">.btn-warning</span>
+                                            <span class="text-info">.btn-info</span>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <b>
+                                            And two sizes. Large(.btn-lg) and small(.btn-sm).
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-button-groups"><h2>Button Groups</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-button-groups" data-bs-parent="#accordion-button">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <p><b>Horizontal button group alignment.</b></p>
+                                            <p><b>Wrapping all the button inside a div and applying <span class="text-danger">.btn-group</span> to it, makes all the wrapped buttons fall in a single line.</b></p>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary">button1</button>
+                                                <button class="btn btn-secondary">button2</button>
+                                                <button class="btn btn-danger">button3</button>
+                                                <button class="btn btn-success">button4</button>
+                                                <button class="btn btn-dark">button5</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <p><b>Verticle button group alignment.</b></p>
+                                            <p><b>Wrapping all the button inside a div and applying <span class="text-danger">.btn-group-verticle</span> to it, makes all the wrapped buttons fall in a single line vertically.</b></p>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <div class="btn-group-vertical">
+                                                <button class="btn btn-primary">button1</button>
+                                                <button class="btn btn-secondary">button2</button>
+                                                <button class="btn btn-danger">button3</button>
+                                                <button class="btn btn-success">button4</button>
+                                                <button class="btn btn-dark">button5</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-cards"><h1>Cards</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-cards" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-cards">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-cards-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-cards-example" data-bs-parent="#accordion-cards">
+                                <div class="accordion-body">
+                                    <div>
+                                        <div class="carousel slide carousel-dark justify-content-center d-flex" id="card-carousel" data-bs-ride="carousel">
+                                            <div class="carousel-inner" style="width:450px;height:450px;padding-left:50px;padding-right:50px">
+                                                <div class="carousel-item active h-100">
+                                                    <div class="card h-100">
+                                                        <div class="card-header">
+                                                            This is card header.
+                                                        </div>
+                                                        <div class="card-body">
+                                                            This is a simple card. This is its body.
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            This is card footer.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card h-100 ">
+                                                        <img class="card-img-top h-100 w-100" src="~/Content/Images/alex-shuper-Or-ysyrPXnU-unsplash.jpg" />
+                                                        <div class="card-header">
+                                                            <h3 class="text-primary">Header with image and link</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            This is a simple card. This is its body.
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a class="btn btn-primary card-link">This is link</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card h-100 ">
+                                                        <div class="card-header">
+                                                            <h3 class="text-danger">Header</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="text-success">Image positioned at the bottom of the card.</p>
+                                                        </div>
+                                                        <img class="card-img-bottom h-100 w-100" src="~/Content/Images/alex-shuper-Or-ysyrPXnU-unsplash.jpg" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card h-100 text-center ">
+                                                        <div class="card-header">
+                                                            <h3 class="text-danger">Header</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="text-success">Text aligned center</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <h5>All the text aligned center.</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card h-100 text-center ">
+                                                        <img class="card-img-top h-100 w-100" src="~/Content/Images/alex-shuper-Or-ysyrPXnU-unsplash.jpg" />
+                                                        <div class="card-img-overlay h-100">
+                                                            <div class="card-header">
+                                                                <h3 class="text-danger">Header</h3>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="text-bg-light">Image overlayed. Turning the image into card background.</p>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <h5>Footer</h5>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card h-100 ">
+                                                        <div class="row h-100">
+                                                            <div class="col-md-4 pe-0">
+                                                                <img class="img-fluid rounded-start h-100 w-100" src="~/Content/Images/ft-shafi-yXj3_8hhKQM-unsplash.jpg" />
+                                                            </div>
+                                                            <div class="col-md-8 ps-0">
+                                                                <div class="card-header">
+                                                                    <div class="card-title">Card title</div>
+                                                                    <div class="card-subtitle">Subtitle</div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <b>Horizontal card and content.</b>
+                                                                    <div class="card-text">This is text with the class <span class="text-danger">.card-text</span></div>
+                                                                </div>
+                                                                <div class="card-footer">
+                                                                    <h5>Footer</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card bg-success h-100">
+                                                        <div class="card-header">
+                                                            <h3 class="text-danger">Header</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="card-title">Full change of the background-color.</div>
+                                                            <div>Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item h-100">
+                                                    <div class="card border-warning h-100">
+                                                        <div class="card-header border-danger">
+                                                            <h3 class="text-danger">Header</h3>
+                                                        </div>
+                                                        <div class="card-body border-warning">
+                                                            <div class="card-title">Changing the borders and we can also keep borders of header and body border both different.</div>
+                                                            <div>Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#card-carousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-collapse"><h1>Collapse</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-collapse" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-collapse">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-collapse-example" data-bs-parent="#accordion-collapse">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card collapse multi-collapse" id="collapse-card1">
+                                                <div class="card-header">Card1</div>
+                                                <div class="card-body">
+                                                    <div class="card-title">I am card one.</div>
+                                                    <div class="card-text">I am going to collapse onclick of the button1 through bootstrap.</div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    Footer 1
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card collapse multi-collapse" id="collapse-card2">
+                                                <div class="card-header">Card2</div>
+                                                <div class="card-body">
+                                                    <div class="card-title">I am card two.</div>
+                                                    <div class="card-text">I am going to collapse onclick of the button2 through bootstrap.</div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    Footer 2
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="row justify-content-around">
+                                                <div class="col text-center">
+                                                    <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapse-card1">Button 1</button>
+                                                </div>
+                                                <div class="col text-center">
+                                                    <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target=".multi-collapse">Close both</button>
+                                                </div>
+                                                <div class="col text-center">
+                                                    <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapse-card2">Button 2</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-target"><h2>Targetting a element.</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-collapse-target" data-bs-parent="#accordion-collapse">
+                                <div class="accordion-body">
+                                    <p><b>There are two types to target an element while collapsing.</b></p>
+                                    <p>
+                                        <b>1]</b> href - Id to provided of the target element. role - to be set to "button"
+                                        <br />
+                                        Ex -  &lt;a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"&gt;Toggle first element&lt;/a&gt;
+                                        <br />
+                                        <br />
+
+                                        <b>2]</b> attr - data-bs-target = "#id"
+                                        <br />
+                                        EX -  &lt;button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria- controls="multiCollapseExample2"&gt;Toggle second element&lt;/button&gt;
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-multiple"><h2>Muptiple collapse</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-collapse-multiple" data-bs-parent="#accordion-collapse">
+                                <div class="accordion-body">
+                                    <p>
+                                        <b>
+                                            - We can taget multiple content divs by a single button.<br />
+                                            - Set data-bs-target  = ".multi-collapse".<br />
+                                            - And add <span class="text-danger">.multi-collapse</span> class to the all the the elments to be collapsed.
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-modals"><h1>Modals</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-modals" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-modals">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-modals-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-modals-example" data-bs-parent="#accordion-modals">
+                                <div class="accordion-body">
+                                    <div class="row row-cols-3">
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-simple">Launch simple modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-backdropstatic">Launch backdrop static</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-vertically-centered">Launch vertically centered modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-small-size">Launch small size modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-large-size">Launch large size modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-extralarge-size">Launch extralarge size modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-fullscreen-size">Launch fullscreen modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-scrollable">Launch scrollable modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-scrollable-body">Launch scrollable body modal</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <label for="#modal-input">Modal triggers when value is 3 through js methods, and hides after 5 seconds.</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="modal-input" type="number" />
+                                                <button class="btn btn-primary" id="modal-input-btn">click</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-modals-functions"><h2>Methods</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-modals-functions" data-bs-parent="#accordion-modals">
+                                <div class="accordion-body">
+                                    <p>
+                                        <b>
+                                            - get the modal object through js like: let modal = new bootstrap.Modal(document.getElementById("modal-simple"), {});<br />
+                                            - modal.show()<br />
+                                            - hide()<br />
+                                            - toggle()<br />
+                                            - dispose()<br />
+                                            - getInstance()<br />
+                                            - getOrCreateInstance()
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-modals-events"><h2>Events</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-modals-events" data-bs-parent="#accordion-modals">
+                                <div class="accordion-body">
+                                    <p>
+                                        <b>
+                                            - show.bs.modal		- Fires immediately when the show instance method is called.<br />
+                                            - shown.bs.modal	- Fires when the modal is fully displayed.<br />
+                                            - hide.bs.modal		- Fires immediately when the hide instance method is called.<br />
+                                            - hidden.bd.modal	- Fires when the modal is fully closed.<br />
+                                            - hidePrevented.bs.modal- This event is fired when the modal is shown, its backdrop is static and a click outside the modal or an escape key press is performed with <br />
+                                            the keyboard option or data-bs-keyboard set to false.
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-offcanvas"><h1>Offcanvas</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-offcanvas" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-offcanvas">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-offcanvas-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse show" id="accordion-offcanvas-example" data-bs-parent="#accordion-offcanvas">
+                                <div class="accordion-body">
+                                    <div class="row row-cols-3">
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-top" data-bs-toggle="offcanvas">Offcanvas top</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-bottom" data-bs-toggle="offcanvas">Offcanvas bottom</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-end" data-bs-toggle="offcanvas">Offcanvas right</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-start" data-bs-toggle="offcanvas">Offcanvas left</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-scroll" data-bs-toggle="offcanvas">Offcanvas scroll</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-primary" data-bs-target="#offcanvas-backdrop" data-bs-toggle="offcanvas">Offcanvas disable backdrop</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-danger" id="offcanvas-toggle">Toggle offcanvas</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-danger" id="offcanvas-show">Show offcanvas</button>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <button class="btn btn-danger" id="offcanvas-hide">Hide offcanvas</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-offcanvas-functions"><h2>Functions</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-offcanvas-functions" data-bs-parent="#accordion-offcanvas">
+                                <div class="accordion-body">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>toggle()</td>
+                                                <td>-</td>
+                                                <td>Toggle offcanvs to show or hidden.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>show()</td>
+                                                <td>-</td>
+                                                <td>Shows the offcanvas element.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>hide()</td>
+                                                <td>-</td>
+                                                <td>Hides the offcanvas element.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getInstance()</td>
+                                                <td>-</td>
+                                                <td>Gets the instance of the offcanvas element.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>getOrCreateInstance()</td>
+                                                <td>-</td>
+                                                <td>Gets the instance if there is none it creates the instance for the offcanvas element.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-offcanvas-events"><h2>Events</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-offcanvas-events" data-bs-parent="#accordion-offcanvas">
+                                <div class="accordion-body">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>show.bs.offcanvas</td>
+                                                <td>-</td>
+                                                <td>Fires immediately when show instance is called.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>shown.bs.offcanvas</td>
+                                                <td>-</td>
+                                                <td>Fires when the offcanvas is made visible to the user.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>hide.bs.offcanvas</td>
+                                                <td>-</td>
+                                                <td>Fires immediately when the hide instance is called.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>hidden.bs.offcanvas</td>
+                                                <td>-</td>
+                                                <td>This event fires when offcanvas element has been hidden from the user.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-popovers"><h1>Popovers</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-popovers" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-popovers">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-popover-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-popover-example" data-bs-parent="accordion-popovers">
+                                <div class="accordion-body">
+                                    <div class="row row-cols-4">
+                                        <div class="col d-flex justify-content-center align-items-center" style="height:200px">
+                                            <button class="btn btn-success" data-bs-toggle="popover" title="This is title" data-bs-content="This is content." data-bs-placement="top">Top popover</button>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center" style="height:200px">
+                                            <button class="btn btn-success" data-bs-toggle="popover" title="This is title" data-bs-content="This is content." data-bs-placement="bottom">Bottom popover</button>
+
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center" style="height:200px">
+                                            <button class="btn btn-success" data-bs-toggle="popover" title="This is title" data-bs-content="This is content." data-bs-placement="left">left popover</button>
+
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center" style="height:200px">
+                                            <button class="btn btn-success" data-bs-toggle="popover" title="This is title" data-bs-content="This is content." data-bs-placement="right">right popover</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-progressbar"><h1>Progress Bar</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-progressbar" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-progressbar">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-target="#accordion-progressbar-example" data-bs-toggle="collapse"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-progressbar-example" data-bs-parent="#accordion-progressbar">
+                                <div class="accordion-body lh-4">
+                                    <div><b>NORMAL PROGRESSBAR</b></div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div><b>STRIPPED PROGRESSBAR</b></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div><b>ANIMATED PROGRESSBAR</b></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div><b>ANIMATED THROUGH JAVASCRIPT PROGRESSBAR</b></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="jsprogressbar" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-spinners"><h1>Spinners</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-spinners" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-spinners">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-spinners-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-spinners-example" data-bs-parent="#accordion-spinners">
+                                <div class="accordion-body">
+                                    <div class="spinner-border"></div>
+                                    <div class="spinner-grow"></div>
+                                    <div class="spinner-grow text-primary"></div>
+                                    <div class="spinner-border text-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-o-toasts"><h1>Toasts</h1></button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-o-toasts" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                    <div class="accordion" id="accordion-toasts">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-toasts-example"><h2>Example</h2></button>
+                            </div>
+                            <div class="accordion-collapse collapse show" id="accordion-toasts-example" data-bs-parent="#accordion-toasts">
+                                <div class="accordion-body">
+                                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-open">Accordion open</button>
+            </div>
+            <div class="accordion-collapse collapse" id="accordion-open" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @* ----------------------------------- modals ----------------------------------- *@
+    @* simple modal *@
+    <div class="modal fade" id="modal-simple">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* static backdrop *@
+    <div class="modal fade" id="modal-backdropstatic" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* vertically centered *@
+    <div class="modal fade" id="modal-vertically-centered" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @* small *@
+    <div class="modal fade modal-sm" id="modal-small-size" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* large *@
+    <div class="modal fade modal-lg" id="modal-large-size" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* extra large *@
+    <div class="modal fade modal-xl" id="modal-extralarge-size" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* fullscreen *@
+    <div class="modal fade" id="modal-fullscreen-size" data-bs-backdrop="static">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    this is modal body.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* modal scrollable *@
+    <div class="modal fade" id="modal-scrollable" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="height:200vh">Scroll the body</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* modal scrollable body *@
+    <div class="modal fade" id="modal-scrollable-body" data-bs-backdrop="static">
+        <div class="modal-dialog  modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">This is modal title</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 200vh">Scroll the body</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn-primary btn" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* ----------------------------------- offcanvas ----------------------------------- *@
+    @* top *@
+    <div class="offcanvas offcanvas-top" id="offcanvas-top">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+    @* bottom *@
+    <div class="offcanvas offcanvas-bottom" id="offcanvas-bottom">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+    @* right *@
+    <div class="offcanvas offcanvas-end" id="offcanvas-end">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+    @* left *@
+    <div class="offcanvas offcanvas-start" id="offcanvas-start">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+    @* Enable body scrolling *@
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" id="offcanvas-scroll">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+    @* disable backdrop *@
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvas-backdrop">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title">This is offcanvas title.</div>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            this is body
+        </div>
+    </div>
+
+
+    @* ---------------------------- Toasts -------------------------------------- *@
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+
+    @* type 2 *@
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    @* type 3 *@
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+            <div class="mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-primary btn-sm">Take action</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+            </div>
+        </div>
+    </div>
+
+    @* type 4 *@
+    <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+</main>
+
+<script type="text/javascript">
+
+    let breakpoints = ["sm", "md", "lg", "xl", "xxl"];
+    let sizes = ["lg", "sm", ""];
+    let colors = ["primary", "secondary", "danger", "success", "warning", "info", "light", "dark"];
+
+
+    //-------------------carousel javascript---------------------------
+    //next
+    $("#carousel-next").click(function () {
+        $("#carousel").carousel('next');
+    })
+
+    //previous
+    $("#carousel-prev").click(function () {
+        $("#carousel").carousel('prev');
+    })
+
+    //pause
+    $("#carousel-pause").click(function () {
+        $("#carousel").carousel('pause');
+    })
+
+    //to
+    $("#carousel-to").click(function () {
+        let toval = $("#carousel-to-input").val();
+        toval = parseInt(toval);
+        $("#carousel").carousel(toval);
+    })
+
+    //pause
+    $("#carousel-dispose").click(function () {
+        $("#carousel").carousel('dispose');
+    })
+
+    //events
+    function alerting() {
+        alert("I am alerted before the sliding was initiated.")
+        carousel.removeEventListener('slide.bs.carousel', alerting);
+    }
+
+    function alerting2() {
+        alert("I am alerted after the sliding is completed.")
+        carousel.removeEventListener('slid.bs.carousel', alerting2);
+    }
+
+    //slid.bs.carousel
+    $("#carousel-eslid").click(function () {
+        let carousel = document.getElementById("carousel");
+        $("#carousel").carousel('next');
+        carousel.addEventListener('slid.bs.carousel', alerting2)
+    })
+
+    //slide.bs.carousel
+    $("#carousel-eslide").click(function () {
+        let carousel = document.getElementById("carousel");
+        $("#carousel").carousel('next');
+        carousel.addEventListener('slide.bs.carousel', alerting)
+    })
+
+    //-----------------------------end--------------------------------------
+
+    //-------------------------Alerts Javascript----------------------------
+
+    //-------------------------Badge Javascript----------------------------
+    let badgecolorid = 0;
+    $("#badge-change-color").click(function () {
+        let badge = document.getElementById("badge");
+
+        if (badgecolorid == 8) {
+            badgecolorid = 0;
+        }
+        console.log(colors[badgecolorid]);
+        if (badgecolorid == 0) {
+            badge.classList.remove("bg-" + colors[7]);
+        }
+        else {
+
+            badge.classList.remove("bg-" + colors[badgecolorid - 1]);
+        }
+        badge.classList.add("bg-" + colors[badgecolorid]);
+        badgecolorid++;
+    })
+
+    //-------------------------Button Javascript----------------------------
+    //change color
+    let button = document.getElementById("button");
+    let buttoncolorid = 0;
+
+    $("#button-color").click(function () {
+
+        //remove outline class
+        button.classList.forEach((value) => {
+            if (value.includes("outline")) {
+                button.classList.remove(value);
+            }
+        })
+
+        if (buttoncolorid == 8) {
+            buttoncolorid = 0;
+        }
+
+        if (buttoncolorid == 0) {
+            button.classList.remove("btn-" + colors[7]);
+        }
+        else {
+
+            button.classList.remove("btn-" + colors[buttoncolorid - 1]);
+        }
+
+        button.classList.add("btn-" + colors[buttoncolorid]);
+        buttoncolorid++;
+
+    })
+
+    //change to outline
+    $("#button-outline").click(function () {
+        button.classList.remove("btn-" + colors[buttoncolorid - 1]);
+        button.classList.add("btn-outline-" + colors[buttoncolorid - 1]);
+    })
+
+    //change size
+    let buttonsizeid = 0;
+    $("#button-size").click(function () {
+
+        if (buttonsizeid == 2) {
+            buttonsizeid = 0;
+        }
+
+        if (buttonsizeid == 0) {
+            button.classList.remove("btn-" + sizes[1]);
+        }
+        else {
+
+            button.classList.remove("btn-" + sizes[buttonsizeid - 1]);
+        }
+        button.classList.add("btn-" + sizes[buttonsizeid]);
+        buttonsizeid++;
+    })
+
+
+    //-------------------------Modal Javascript----------------------------
+    let modal = new bootstrap.Modal(document.getElementById("modal-simple"), {});
+    $("#modal-input-btn").click(function () {
+        let modalvalue = $("#modal-input").val();
+        console.log(modalvalue);
+        if (modalvalue == 3) {
+            modal.show();
+
+            setTimeout(function () { modal.hide(); }, 5000)
+        }
+
+    })
+
+    //-------------------------Offcanvas Javascript----------------------------
+    let offcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvas-backdrop"));
+
+    //toggle
+    $("#offcanvas-toggle").click(function () {
+        offcanvas.toggle();
+    })
+
+    //show
+    $("#offcanvas-show").click(function () {
+        offcanvas.show();
+    })
+
+    //hide
+    $("#offcanvas-hide").click(function () {
+        offcanvas.hide();
+    })
+
+    //-------------------------Popover Javascript----------------------------
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    //close popover on close of accordion on open and close of the parent element.
+    $(".accordion-button").click(function () {
+        popoverTriggerList.map(function (eachpopover) {
+            var pops = bootstrap.Popover.getOrCreateInstance(eachpopover);
+            pops.hide();
+        })
+    })
+
+    //-------------------------Progressbar Javascript----------------------------
+    var progresswidth = 0;
+    var t = setInterval(function () {
+        var progressbarelement = document.getElementById("jsprogressbar");
+        progressbarelement.style.width = (progresswidth++) + "%";
+        progressbarelement.innerText = (progresswidth) + "%";
+
+        //change color on 50%
+        if (progresswidth == 50) {
+            progressbarelement.classList.add("bg-success");
+        }
+        if (progresswidth == 100) {
+            progresswidth = 0;
+            progressbarelement.classList.remove("bg-success");
+        }
+    }, 1000);
+
+
+//-------------------------Toasts Javascript----------------------------
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+    var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, {
+            autohide: true
+        })
+    })
+
+    $("#liveToastBtn").click(function () {
+        toastList.forEach(element => {
+            element.show();
+        });
+    })
+
+     
+
+</script>
